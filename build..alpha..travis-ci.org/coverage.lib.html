@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-grunt-bump/grunt-bump/tasks/bump.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-grunt-bump/node_modules/grunt-bump/tasks/bump.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-grunt-bump">npmtest-grunt-bump (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-grunt-bump/grunt-bump/tasks/bump.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-grunt-bump/node_modules/grunt-bump/tasks/bump.js</span></h1>
     <h2>
         
         Statements: <span class="metric">2.05% <small>(3 / 146)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-grunt-bump/grunt-bump/tasks/</a> » bump.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-grunt-bump/node_modules/grunt-bump/tasks/</a> &#187; bump.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -807,11 +809,11 @@
 var semver = require('semver');
 var exec = require('child_process').exec;
 &nbsp;
-module.exports = <span class="fstat-no" title="function not covered">function(grunt) {</span>
+module.exports = <span class="fstat-no" title="function not covered" >function(grunt) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var DESC = 'Increment the version, commit, tag and push.';</span>
-<span class="cstat-no" title="statement not covered">  grunt.registerTask('bump', DESC, <span class="fstat-no" title="function not covered">function(versionType, incOrCommitOnly) {</span></span>
-<span class="cstat-no" title="statement not covered">    var opts = this.options({</span>
+<span class="cstat-no" title="statement not covered" >  var DESC = 'Increment the version, commit, tag and push.';</span>
+<span class="cstat-no" title="statement not covered" >  grunt.registerTask('bump', DESC, <span class="fstat-no" title="function not covered" >function(versionType, incOrCommitOnly) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var opts = this.options({</span>
       bumpVersion: true,
       commit: true,
       commitFiles: ['package.json'], // '-a' for all files
@@ -834,275 +836,274 @@ module.exports = <span class="fstat-no" title="function not covered">function(gr
       versionType: false
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (versionType === 'bump-only' || versionType === 'commit-only') {</span>
-<span class="cstat-no" title="statement not covered">      incOrCommitOnly = versionType;</span>
-<span class="cstat-no" title="statement not covered">      versionType = '';</span>
+<span class="cstat-no" title="statement not covered" >    if (versionType === 'bump-only' || versionType === 'commit-only') {</span>
+<span class="cstat-no" title="statement not covered" >      incOrCommitOnly = versionType;</span>
+<span class="cstat-no" title="statement not covered" >      versionType = '';</span>
     }
-<span class="cstat-no" title="statement not covered">    versionType = versionType || opts.versionType;</span>
+<span class="cstat-no" title="statement not covered" >    versionType = versionType || opts.versionType;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var dryRun = grunt.option('dry-run') || opts.dryRun;</span>
+<span class="cstat-no" title="statement not covered" >    var dryRun = grunt.option('dry-run') || opts.dryRun;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var setVersion = grunt.option('setversion') || opts.setVersion;</span>
-<span class="cstat-no" title="statement not covered">    if (setVersion &amp;&amp; !semver.valid(setVersion)) {</span>
-<span class="cstat-no" title="statement not covered">      setVersion = false;</span>
+<span class="cstat-no" title="statement not covered" >    var setVersion = grunt.option('setversion') || opts.setVersion;</span>
+<span class="cstat-no" title="statement not covered" >    if (setVersion &amp;&amp; !semver.valid(setVersion)) {</span>
+<span class="cstat-no" title="statement not covered" >      setVersion = false;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var globalVersion; </span>// when bumping multiple files
-<span class="cstat-no" title="statement not covered">    var gitVersion; </span>   // when bumping using `git describe`
+<span class="cstat-no" title="statement not covered" >    var globalVersion; </span>// when bumping multiple files
+<span class="cstat-no" title="statement not covered" >    var gitVersion; </span>   // when bumping using `git describe`
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var VERSION_REGEXP = opts.regExp || new RegExp(</span>
+<span class="cstat-no" title="statement not covered" >    var VERSION_REGEXP = opts.regExp || new RegExp(</span>
       '([\'|\"]?version[\'|\"]?[ ]*:[ ]*[\'|\"]?)(\\d+\\.\\d+\\.\\d+(-' +
       opts.prereleaseName +
       '\\.\\d+)?(-\\d+)?)[\\d||A-a|.|-]*([\'|\"]?)', 'i'
     );
-<span class="cstat-no" title="statement not covered">    if (opts.globalReplace) {</span>
-<span class="cstat-no" title="statement not covered">      VERSION_REGEXP = new RegExp(VERSION_REGEXP.source, 'gi');</span>
+<span class="cstat-no" title="statement not covered" >    if (opts.globalReplace) {</span>
+<span class="cstat-no" title="statement not covered" >      VERSION_REGEXP = new RegExp(VERSION_REGEXP.source, 'gi');</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var done = this.async();</span>
-<span class="cstat-no" title="statement not covered">    var queue = [];</span>
-<span class="cstat-no" title="statement not covered">    var next = <span class="fstat-no" title="function not covered">function() {</span></span>
-<span class="cstat-no" title="statement not covered">      if (!queue.length) {</span>
-<span class="cstat-no" title="statement not covered">        grunt.config.set('bump.version', globalVersion);</span>
-<span class="cstat-no" title="statement not covered">        return done();</span>
+<span class="cstat-no" title="statement not covered" >    var done = this.async();</span>
+<span class="cstat-no" title="statement not covered" >    var queue = [];</span>
+<span class="cstat-no" title="statement not covered" >    var next = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (!queue.length) {</span>
+<span class="cstat-no" title="statement not covered" >        grunt.config.set('bump.version', globalVersion);</span>
+<span class="cstat-no" title="statement not covered" >        return done();</span>
       }
-<span class="cstat-no" title="statement not covered">      queue.shift()();</span>
+<span class="cstat-no" title="statement not covered" >      queue.shift()();</span>
     };
-<span class="cstat-no" title="statement not covered">    var runIf = <span class="fstat-no" title="function not covered">function(condition, behavior) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (condition) {</span>
-<span class="cstat-no" title="statement not covered">        queue.push(behavior);</span>
+<span class="cstat-no" title="statement not covered" >    var runIf = <span class="fstat-no" title="function not covered" >function(condition, behavior) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (condition) {</span>
+<span class="cstat-no" title="statement not covered" >        queue.push(behavior);</span>
       }
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (dryRun) {</span>
-<span class="cstat-no" title="statement not covered">      grunt.log.writeln('Running grunt-bump in dry mode!');</span>
+<span class="cstat-no" title="statement not covered" >    if (dryRun) {</span>
+<span class="cstat-no" title="statement not covered" >      grunt.log.writeln('Running grunt-bump in dry mode!');</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (incOrCommitOnly === 'bump-only') {</span>
-<span class="cstat-no" title="statement not covered">      grunt.verbose.writeln('Only incrementing the version.');</span>
+<span class="cstat-no" title="statement not covered" >    if (incOrCommitOnly === 'bump-only') {</span>
+<span class="cstat-no" title="statement not covered" >      grunt.verbose.writeln('Only incrementing the version.');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      opts.commit = false;</span>
-<span class="cstat-no" title="statement not covered">      opts.createTag = false;</span>
-<span class="cstat-no" title="statement not covered">      opts.push = false;</span>
+<span class="cstat-no" title="statement not covered" >      opts.commit = false;</span>
+<span class="cstat-no" title="statement not covered" >      opts.createTag = false;</span>
+<span class="cstat-no" title="statement not covered" >      opts.push = false;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (incOrCommitOnly === 'commit-only') {</span>
-<span class="cstat-no" title="statement not covered">      grunt.verbose.writeln('Only committing/tagging/pushing.');</span>
+<span class="cstat-no" title="statement not covered" >    if (incOrCommitOnly === 'commit-only') {</span>
+<span class="cstat-no" title="statement not covered" >      grunt.verbose.writeln('Only committing/tagging/pushing.');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      opts.bumpVersion = false;</span>
+<span class="cstat-no" title="statement not covered" >      opts.bumpVersion = false;</span>
     }
 &nbsp;
     // GET VERSION FROM GIT
-<span class="cstat-no" title="statement not covered">    runIf(opts.bumpVersion &amp;&amp; versionType === 'git', <span class="fstat-no" title="function not covered">function() {</span></span>
-<span class="cstat-no" title="statement not covered">      exec('git describe ' + opts.gitDescribeOptions, <span class="fstat-no" title="function not covered">function(err, stdout) {</span></span>
-<span class="cstat-no" title="statement not covered">        if (err) {</span>
-<span class="cstat-no" title="statement not covered">          grunt.fatal('Can not get a version number using `git describe`');</span>
+<span class="cstat-no" title="statement not covered" >    runIf(opts.bumpVersion &amp;&amp; versionType === 'git', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >      exec('git describe ' + opts.gitDescribeOptions, <span class="fstat-no" title="function not covered" >function(err, stdout) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >          grunt.fatal('Can not get a version number using `git describe`');</span>
         }
-<span class="cstat-no" title="statement not covered">        gitVersion = stdout.trim();</span>
-<span class="cstat-no" title="statement not covered">        next();</span>
+<span class="cstat-no" title="statement not covered" >        gitVersion = stdout.trim();</span>
+<span class="cstat-no" title="statement not covered" >        next();</span>
       });
     });
 &nbsp;
     // BUMP ALL FILES
-<span class="cstat-no" title="statement not covered">    runIf(opts.bumpVersion, <span class="fstat-no" title="function not covered">function() {</span></span>
-<span class="cstat-no" title="statement not covered">      grunt.file.expand(opts.files).forEach(<span class="fstat-no" title="function not covered">function(file, idx) {</span></span>
-<span class="cstat-no" title="statement not covered">        var version = null;</span>
-<span class="cstat-no" title="statement not covered">        var content = grunt.file.read(file).replace(</span>
+<span class="cstat-no" title="statement not covered" >    runIf(opts.bumpVersion, <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >      grunt.file.expand(opts.files).forEach(<span class="fstat-no" title="function not covered" >function(file, idx) {</span></span>
+<span class="cstat-no" title="statement not covered" >        var version = null;</span>
+<span class="cstat-no" title="statement not covered" >        var content = grunt.file.read(file).replace(</span>
           VERSION_REGEXP,
-<span class="fstat-no" title="function not covered">          function(match, prefix, parsedVersion, namedPre, noNamePre, suffix) {</span>
-<span class="cstat-no" title="statement not covered">            var type = versionType === 'git' ? 'prerelease' : versionType;</span>
-<span class="cstat-no" title="statement not covered">            version = setVersion || semver.inc(</span>
+<span class="fstat-no" title="function not covered" >          function(match, prefix, parsedVersion, namedPre, noNamePre, suffix) {</span>
+<span class="cstat-no" title="statement not covered" >            var type = versionType === 'git' ? 'prerelease' : versionType;</span>
+<span class="cstat-no" title="statement not covered" >            version = setVersion || semver.inc(</span>
               parsedVersion, type || 'patch', gitVersion || opts.prereleaseName
             );
-<span class="cstat-no" title="statement not covered">            if (opts.metadata) {</span>
-<span class="cstat-no" title="statement not covered">              if (!/^([0-9a-zA-Z-]+\.{0,1})*$/.test(opts.metadata)) {</span>
-<span class="cstat-no" title="statement not covered">                grunt.fatal(</span>
+<span class="cstat-no" title="statement not covered" >            if (opts.metadata) {</span>
+<span class="cstat-no" title="statement not covered" >              if (!/^([0-9a-zA-Z-]+\.{0,1})*$/.test(opts.metadata)) {</span>
+<span class="cstat-no" title="statement not covered" >                grunt.fatal(</span>
                   'Metadata can only contain letters, numbers, dashes ' +
                   '(-) and dots (.)'
                 );
               }
-<span class="cstat-no" title="statement not covered">              version += '+' + opts.metadata;</span>
+<span class="cstat-no" title="statement not covered" >              version += '+' + opts.metadata;</span>
             }
-<span class="cstat-no" title="statement not covered">            return prefix + version + (suffix || '');</span>
+<span class="cstat-no" title="statement not covered" >            return prefix + version + (suffix || '');</span>
           }
         );
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (!version) {</span>
-<span class="cstat-no" title="statement not covered">          grunt.fatal('Can not find a version to bump in ' + file);</span>
+<span class="cstat-no" title="statement not covered" >        if (!version) {</span>
+<span class="cstat-no" title="statement not covered" >          grunt.fatal('Can not find a version to bump in ' + file);</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var logMsg = 'Version bumped to ' + version +  ' (in ' + file + ')';</span>
-<span class="cstat-no" title="statement not covered">        if (!dryRun) {</span>
-<span class="cstat-no" title="statement not covered">          grunt.file.write(file, content);</span>
-<span class="cstat-no" title="statement not covered">          grunt.log.ok(logMsg);</span>
+<span class="cstat-no" title="statement not covered" >        var logMsg = 'Version bumped to ' + version +  ' (in ' + file + ')';</span>
+<span class="cstat-no" title="statement not covered" >        if (!dryRun) {</span>
+<span class="cstat-no" title="statement not covered" >          grunt.file.write(file, content);</span>
+<span class="cstat-no" title="statement not covered" >          grunt.log.ok(logMsg);</span>
         } else {
-<span class="cstat-no" title="statement not covered">          grunt.log.ok('bump-dry: ' + logMsg);</span>
+<span class="cstat-no" title="statement not covered" >          grunt.log.ok('bump-dry: ' + logMsg);</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (!globalVersion) {</span>
-<span class="cstat-no" title="statement not covered">          globalVersion = version;</span>
-        } else <span class="cstat-no" title="statement not covered">if (globalVersion !== version) {</span>
-<span class="cstat-no" title="statement not covered">          grunt.warn('Bumping multiple files with different versions!');</span>
+<span class="cstat-no" title="statement not covered" >        if (!globalVersion) {</span>
+<span class="cstat-no" title="statement not covered" >          globalVersion = version;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (globalVersion !== version) {</span>
+<span class="cstat-no" title="statement not covered" >          grunt.warn('Bumping multiple files with different versions!');</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var configProperty = opts.updateConfigs[idx];</span>
-<span class="cstat-no" title="statement not covered">        if (!configProperty) {</span>
-<span class="cstat-no" title="statement not covered">          return;</span>
+<span class="cstat-no" title="statement not covered" >        var configProperty = opts.updateConfigs[idx];</span>
+<span class="cstat-no" title="statement not covered" >        if (!configProperty) {</span>
+<span class="cstat-no" title="statement not covered" >          return;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var cfg = grunt.config(configProperty);</span>
-<span class="cstat-no" title="statement not covered">        if (!cfg) {</span>
-<span class="cstat-no" title="statement not covered">          return grunt.warn(</span>
+<span class="cstat-no" title="statement not covered" >        var cfg = grunt.config(configProperty);</span>
+<span class="cstat-no" title="statement not covered" >        if (!cfg) {</span>
+<span class="cstat-no" title="statement not covered" >          return grunt.warn(</span>
             'Can not update "' + configProperty + '" config, it does not exist!'
           );
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        cfg.version = version;</span>
-<span class="cstat-no" title="statement not covered">        grunt.config(configProperty, cfg);</span>
-<span class="cstat-no" title="statement not covered">        grunt.log.ok(configProperty + '\'s version updated');</span>
+<span class="cstat-no" title="statement not covered" >        cfg.version = version;</span>
+<span class="cstat-no" title="statement not covered" >        grunt.config(configProperty, cfg);</span>
+<span class="cstat-no" title="statement not covered" >        grunt.log.ok(configProperty + '\'s version updated');</span>
       });
-<span class="cstat-no" title="statement not covered">      next();</span>
+<span class="cstat-no" title="statement not covered" >      next();</span>
     });
 &nbsp;
 &nbsp;
     // when only committing, read the version from package.json / pkg config
-<span class="cstat-no" title="statement not covered">    runIf(!opts.bumpVersion, <span class="fstat-no" title="function not covered">function() {</span></span>
-<span class="cstat-no" title="statement not covered">      var configVersion = grunt.config.get('bump.version');</span>
+<span class="cstat-no" title="statement not covered" >    runIf(!opts.bumpVersion, <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >      var configVersion = grunt.config.get('bump.version');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if (configVersion) {</span>
-<span class="cstat-no" title="statement not covered">        globalVersion = configVersion;</span>
+<span class="cstat-no" title="statement not covered" >      if (configVersion) {</span>
+<span class="cstat-no" title="statement not covered" >        globalVersion = configVersion;</span>
       }
-      else <span class="cstat-no" title="statement not covered">if (opts.updateConfigs.length) {</span>
-<span class="cstat-no" title="statement not covered">        globalVersion = grunt.config(opts.updateConfigs[0]).version;</span>
+      else <span class="cstat-no" title="statement not covered" >if (opts.updateConfigs.length) {</span>
+<span class="cstat-no" title="statement not covered" >        globalVersion = grunt.config(opts.updateConfigs[0]).version;</span>
       } else {
-<span class="cstat-no" title="statement not covered">        globalVersion = grunt.file.readJSON(opts.files[0]).version;</span>
+<span class="cstat-no" title="statement not covered" >        globalVersion = grunt.file.readJSON(opts.files[0]).version;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      next();</span>
+<span class="cstat-no" title="statement not covered" >      next();</span>
     });
 &nbsp;
 &nbsp;
     // COMMIT
-<span class="cstat-no" title="statement not covered">    runIf(opts.commit, <span class="fstat-no" title="function not covered">function() {</span></span>
-<span class="cstat-no" title="statement not covered">      var commitMessage = opts.commitMessage.replace(</span>
+<span class="cstat-no" title="statement not covered" >    runIf(opts.commit, <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >      var commitMessage = opts.commitMessage.replace(</span>
         '%VERSION%', globalVersion
       );
-<span class="cstat-no" title="statement not covered">      var cmd = 'git commit ' + opts.gitCommitOptions + ' ' + opts.commitFiles.join(' ');</span>
-<span class="cstat-no" title="statement not covered">      cmd += ' -m "' + commitMessage + '"';</span>
+<span class="cstat-no" title="statement not covered" >      var cmd = 'git commit ' + opts.gitCommitOptions + ' ' + opts.commitFiles.join(' ');</span>
+<span class="cstat-no" title="statement not covered" >      cmd += ' -m "' + commitMessage + '"';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if (dryRun) {</span>
-<span class="cstat-no" title="statement not covered">        grunt.log.ok('bump-dry: ' + cmd);</span>
-<span class="cstat-no" title="statement not covered">        next();</span>
+<span class="cstat-no" title="statement not covered" >      if (dryRun) {</span>
+<span class="cstat-no" title="statement not covered" >        grunt.log.ok('bump-dry: ' + cmd);</span>
+<span class="cstat-no" title="statement not covered" >        next();</span>
       } else {
-<span class="cstat-no" title="statement not covered">        exec(cmd, <span class="fstat-no" title="function not covered">function(err, stdout, stderr) {</span></span>
-<span class="cstat-no" title="statement not covered">          if (err) {</span>
-<span class="cstat-no" title="statement not covered">            grunt.fatal('Can not create the commit:\n  ' + stderr);</span>
+<span class="cstat-no" title="statement not covered" >        exec(cmd, <span class="fstat-no" title="function not covered" >function(err, stdout, stderr) {</span></span>
+<span class="cstat-no" title="statement not covered" >          if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            grunt.fatal('Can not create the commit:\n  ' + stderr);</span>
           }
-<span class="cstat-no" title="statement not covered">          grunt.log.ok('Committed as "' + commitMessage + '"');</span>
-<span class="cstat-no" title="statement not covered">          next();</span>
+<span class="cstat-no" title="statement not covered" >          grunt.log.ok('Committed as "' + commitMessage + '"');</span>
+<span class="cstat-no" title="statement not covered" >          next();</span>
         });
       }
     });
 &nbsp;
 &nbsp;
     // CREATE TAG
-<span class="cstat-no" title="statement not covered">    runIf(opts.createTag, <span class="fstat-no" title="function not covered">function() {</span></span>
-<span class="cstat-no" title="statement not covered">      var tagName = opts.tagName.replace('%VERSION%', globalVersion);</span>
-<span class="cstat-no" title="statement not covered">      var tagMessage = opts.tagMessage.replace('%VERSION%', globalVersion);</span>
+<span class="cstat-no" title="statement not covered" >    runIf(opts.createTag, <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >      var tagName = opts.tagName.replace('%VERSION%', globalVersion);</span>
+<span class="cstat-no" title="statement not covered" >      var tagMessage = opts.tagMessage.replace('%VERSION%', globalVersion);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var cmd = 'git tag -a ' + tagName + ' -m "' + tagMessage + '"';</span>
-<span class="cstat-no" title="statement not covered">      if (dryRun) {</span>
-<span class="cstat-no" title="statement not covered">        grunt.log.ok('bump-dry: ' + cmd);</span>
-<span class="cstat-no" title="statement not covered">        next();</span>
+<span class="cstat-no" title="statement not covered" >      var cmd = 'git tag -a ' + tagName + ' -m "' + tagMessage + '"';</span>
+<span class="cstat-no" title="statement not covered" >      if (dryRun) {</span>
+<span class="cstat-no" title="statement not covered" >        grunt.log.ok('bump-dry: ' + cmd);</span>
+<span class="cstat-no" title="statement not covered" >        next();</span>
       } else {
-<span class="cstat-no" title="statement not covered">        exec(cmd , <span class="fstat-no" title="function not covered">function(err, stdout, stderr) {</span></span>
-<span class="cstat-no" title="statement not covered">          if (err) {</span>
-<span class="cstat-no" title="statement not covered">            grunt.fatal('Can not create the tag:\n  ' + stderr);</span>
+<span class="cstat-no" title="statement not covered" >        exec(cmd , <span class="fstat-no" title="function not covered" >function(err, stdout, stderr) {</span></span>
+<span class="cstat-no" title="statement not covered" >          if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            grunt.fatal('Can not create the tag:\n  ' + stderr);</span>
           }
-<span class="cstat-no" title="statement not covered">          grunt.log.ok('Tagged as "' + tagName + '"');</span>
-<span class="cstat-no" title="statement not covered">          next();</span>
+<span class="cstat-no" title="statement not covered" >          grunt.log.ok('Tagged as "' + tagName + '"');</span>
+<span class="cstat-no" title="statement not covered" >          next();</span>
         });
       }
     });
 &nbsp;
 &nbsp;
     // PUSH CHANGES
-<span class="cstat-no" title="statement not covered">    runIf(opts.push, <span class="fstat-no" title="function not covered">function() {</span></span>
-<span class="cstat-no" title="statement not covered">      var cmd;</span>
+<span class="cstat-no" title="statement not covered" >    runIf(opts.push, <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >      var cmd;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if (opts.push === 'git' &amp;&amp; !opts.pushTo) {</span>
-<span class="cstat-no" title="statement not covered">        cmd = 'git push';</span>
-<span class="cstat-no" title="statement not covered">        if (dryRun) {</span>
-<span class="cstat-no" title="statement not covered">          grunt.log.ok('bump-dry: ' + cmd);</span>
-<span class="cstat-no" title="statement not covered">          next();</span>
+<span class="cstat-no" title="statement not covered" >      if (opts.push === 'git' &amp;&amp; !opts.pushTo) {</span>
+<span class="cstat-no" title="statement not covered" >        cmd = 'git push';</span>
+<span class="cstat-no" title="statement not covered" >        if (dryRun) {</span>
+<span class="cstat-no" title="statement not covered" >          grunt.log.ok('bump-dry: ' + cmd);</span>
+<span class="cstat-no" title="statement not covered" >          next();</span>
         } else {
-<span class="cstat-no" title="statement not covered">          exec(cmd, <span class="fstat-no" title="function not covered">function(err, stdout, stderr) {</span></span>
-<span class="cstat-no" title="statement not covered">            if (err) {</span>
-<span class="cstat-no" title="statement not covered">              grunt.fatal(</span>
+<span class="cstat-no" title="statement not covered" >          exec(cmd, <span class="fstat-no" title="function not covered" >function(err, stdout, stderr) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >              grunt.fatal(</span>
                 'Can not push to the git default settings:\n ' + stderr
               );
             }
-<span class="cstat-no" title="statement not covered">            grunt.log.ok('Pushed to the git default settings');</span>
-<span class="cstat-no" title="statement not covered">            next();</span>
+<span class="cstat-no" title="statement not covered" >            grunt.log.ok('Pushed to the git default settings');</span>
+<span class="cstat-no" title="statement not covered" >            next();</span>
           });
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return;</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      exec('git rev-parse --abbrev-ref HEAD', <span class="fstat-no" title="function not covered">function(err, ref, stderr) {</span></span>
-<span class="cstat-no" title="statement not covered">        if (err) {</span>
-<span class="cstat-no" title="statement not covered">          grunt.fatal('Can not get ref for HEAD:\n' + stderr);</span>
+<span class="cstat-no" title="statement not covered" >      exec('git rev-parse --abbrev-ref HEAD', <span class="fstat-no" title="function not covered" >function(err, ref, stderr) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >          grunt.fatal('Can not get ref for HEAD:\n' + stderr);</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        cmd = [];</span>
+<span class="cstat-no" title="statement not covered" >        cmd = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (opts.push === true || opts.push === 'branch') {</span>
-<span class="cstat-no" title="statement not covered">          cmd.push('git push ' + opts.pushTo + ' ' + ref.trim());</span>
+<span class="cstat-no" title="statement not covered" >        if (opts.push === true || opts.push === 'branch') {</span>
+<span class="cstat-no" title="statement not covered" >          cmd.push('git push ' + opts.pushTo + ' ' + ref.trim());</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (opts.createTag &amp;&amp; (opts.push === true || opts.push === 'tag')) {</span>
-<span class="cstat-no" title="statement not covered">          var tagName = opts.tagName.replace('%VERSION%', globalVersion);</span>
-<span class="cstat-no" title="statement not covered">          cmd.push('git push ' + opts.pushTo + ' ' + tagName);</span>
+<span class="cstat-no" title="statement not covered" >        if (opts.createTag &amp;&amp; (opts.push === true || opts.push === 'tag')) {</span>
+<span class="cstat-no" title="statement not covered" >          var tagName = opts.tagName.replace('%VERSION%', globalVersion);</span>
+<span class="cstat-no" title="statement not covered" >          cmd.push('git push ' + opts.pushTo + ' ' + tagName);</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        cmd = cmd.join(' &amp;&amp; ');</span>
+<span class="cstat-no" title="statement not covered" >        cmd = cmd.join(' &amp;&amp; ');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (dryRun) {</span>
-<span class="cstat-no" title="statement not covered">          grunt.log.ok('bump-dry: ' + cmd);</span>
-<span class="cstat-no" title="statement not covered">          next();</span>
+<span class="cstat-no" title="statement not covered" >        if (dryRun) {</span>
+<span class="cstat-no" title="statement not covered" >          grunt.log.ok('bump-dry: ' + cmd);</span>
+<span class="cstat-no" title="statement not covered" >          next();</span>
         } else {
-<span class="cstat-no" title="statement not covered">          exec(cmd, <span class="fstat-no" title="function not covered">function(err, stdout, stderr) {</span></span>
-<span class="cstat-no" title="statement not covered">            if (err) {</span>
-<span class="cstat-no" title="statement not covered">              grunt.fatal('Can not push to ' + opts.pushTo + ':\n  ' + stderr);</span>
+<span class="cstat-no" title="statement not covered" >          exec(cmd, <span class="fstat-no" title="function not covered" >function(err, stdout, stderr) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >              grunt.fatal('Can not push to ' + opts.pushTo + ':\n  ' + stderr);</span>
             }
-<span class="cstat-no" title="statement not covered">            grunt.log.ok('Pushed to ' + opts.pushTo);</span>
-<span class="cstat-no" title="statement not covered">            next();</span>
+<span class="cstat-no" title="statement not covered" >            grunt.log.ok('Pushed to ' + opts.pushTo);</span>
+<span class="cstat-no" title="statement not covered" >            next();</span>
           });
         }
       });
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered">    next();</span>
+<span class="cstat-no" title="statement not covered" >    next();</span>
   });
 &nbsp;
 &nbsp;
   // ALIASES
-<span class="cstat-no" title="statement not covered">  DESC = 'Increment the version only.';</span>
-<span class="cstat-no" title="statement not covered">  grunt.registerTask('bump-only', DESC, <span class="fstat-no" title="function not covered">function(versionType) {</span></span>
-<span class="cstat-no" title="statement not covered">    grunt.task.run('bump:' + (versionType || '') + ':bump-only');</span>
+<span class="cstat-no" title="statement not covered" >  DESC = 'Increment the version only.';</span>
+<span class="cstat-no" title="statement not covered" >  grunt.registerTask('bump-only', DESC, <span class="fstat-no" title="function not covered" >function(versionType) {</span></span>
+<span class="cstat-no" title="statement not covered" >    grunt.task.run('bump:' + (versionType || '') + ':bump-only');</span>
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  DESC = 'Commit, tag, push without incrementing the version.';</span>
-<span class="cstat-no" title="statement not covered">  grunt.registerTask('bump-commit', DESC, 'bump::commit-only');</span>
+<span class="cstat-no" title="statement not covered" >  DESC = 'Commit, tag, push without incrementing the version.';</span>
+<span class="cstat-no" title="statement not covered" >  grunt.registerTask('bump-commit', DESC, 'bump::commit-only');</span>
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 23:43:25 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 17:14:30 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
