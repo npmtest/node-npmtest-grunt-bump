@@ -1,6 +1,6 @@
 # npmtest-grunt-bump
 
-#### test coverage for  [grunt-bump (v0.8.0)](https://github.com/vojtajina/grunt-bump)  [![npm package](https://img.shields.io/npm/v/npmtest-grunt-bump.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-grunt-bump) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-grunt-bump.svg)](https://travis-ci.org/npmtest/node-npmtest-grunt-bump)
+#### basic test coverage for  [grunt-bump (v0.8.0)](https://github.com/vojtajina/grunt-bump)  [![npm package](https://img.shields.io/npm/v/npmtest-grunt-bump.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-grunt-bump) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-grunt-bump.svg)](https://travis-ci.org/npmtest/node-npmtest-grunt-bump)
 
 #### Bump package version
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-grunt-bump/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-grunt-bump/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-grunt-bump/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-grunt-bump/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-grunt-bump/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-grunt-bump/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-grunt-bump/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-grunt-bump/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-grunt-bump/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-grunt-bump/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-grunt-bump/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-grunt-bump/build/coverage.html/index.html)
 
@@ -191,7 +191,8 @@
         "release-patch": "grunt release:patch",
         "test": "grunt nodeunit"
     },
-    "version": "0.8.0"
+    "version": "0.8.0",
+    "bin": {}
 }
 ```
 
